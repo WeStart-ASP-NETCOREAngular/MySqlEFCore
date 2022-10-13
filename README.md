@@ -5,6 +5,8 @@
 
 Program.cs
 ```
+using Microsoft.EntityFrameworkCore;
+
 var connectionString = builder.Configuration.GetConnectionString("MySqlConnection");
 builder.Services.AddDbContext<BlogDbContext>(options =>
 {
