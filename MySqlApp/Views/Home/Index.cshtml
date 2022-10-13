@@ -1,0 +1,31 @@
+﻿@model List<Post>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="alert alert-success">
+    @TempData["Success"]
+</div>
+<hr />
+<div class="card">
+    <div class="card-header">
+        Posts List
+    </div>
+    <div class="card-body">
+        @if (Model != null)
+        {
+            <ul class="list-group">
+                @foreach (Post post in Model)
+                {
+                    <li class="list-group-item">
+                        @post.Title <span class="badge bg-secondary">@post.Author.Name</span>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <div>No Posts</div>
+        }
+    </div>
+</div>
